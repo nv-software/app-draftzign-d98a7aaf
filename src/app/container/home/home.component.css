@@ -1,0 +1,103 @@
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    max-width: 1440px;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: auto;
+    padding: 0;
+}
+
+.title span {
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #ccc;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.collumn {
+    flex: 1 1 45%;
+    margin: 10px;
+    max-width: 45%;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.content, .content {
+    text-align: left;
+}
+
+.ico {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.campain-ico {
+    background-image: url('/assets/home/campain-ico.svg');
+}
+.social-media-ico{
+    background-image: url('/assets/home/social-media-ico.svg');
+}
+.ecommerce-ico{
+    background-image: url('/assets/home/ecomm-ico.svg');
+}
+.landing-pages-ico{
+    background-image: url('/assets/home/landing-pages-ico.svg');
+}
+
+.content-title span {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content-subtitle span {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1.5;
+}
+
+.cta-know-more {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cta-know-more span {
+    font-size: 16px;
+    color: #9b59b6;
+    font-weight: bold;
+}
+
+.cta-know-more .know-more-ico {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-color: #9b59b6;
+    mask: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M9 18l6-6-6-6"/%3E%3C/svg%3E');
+    -webkit-mask: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M9 18l6-6-6-6"/%3E%3C/svg%3E');
+    mask-size: cover;
+    -webkit-mask-size: cover;
+}
