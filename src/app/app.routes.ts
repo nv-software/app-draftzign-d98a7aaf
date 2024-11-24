@@ -5,6 +5,7 @@ import { EcommerceComponent } from './container/ecommerce/ecommerce.component';
 import { LandingPagesComponent } from './container/landing-pages/landing-pages.component';
 import { SocialMediaComponent } from './container/social-media/social-media.component';
 import { HomeComponent } from './container/home/home.component';
+import { CampainComponent } from './container/campain/campain.component';
 
 export const routes: Routes = [
     
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'landing-pages', component: LandingPagesComponent },
     { path: 'midias-sociais', component: SocialMediaComponent },
+    { path: 'trafego-pago', component: CampainComponent },
     { path: '**', redirectTo: 'home' }, 
 ];
