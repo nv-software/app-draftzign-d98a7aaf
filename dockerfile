@@ -7,7 +7,7 @@ FROM node:18.20.0-alpine3.19 as build
 WORKDIR /usr/src/app
 
 # Add the source code to app
-COPY ./ .
+COPY ./ ./
 
 # Install all the dependencies
 RUN npm install
@@ -25,6 +25,9 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/src/app/dist/app-draftzign/browser/ /usr/share/nginx/html
+
+# Copy the custom nginx configuration
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
