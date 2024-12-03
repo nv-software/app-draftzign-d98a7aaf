@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./:/usr/local/app
+      - /usr/local/app/node_modules
