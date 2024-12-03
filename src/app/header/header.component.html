@@ -1,24 +1,32 @@
-<div class="header" [ngStyle]="{backgroundImage:getBackgroundImg }" >
-<div class="content">
-    <div class="title">
+<div class="header" [ngStyle]="{ backgroundImage: backgroundImg }">
+    <div class="content">
+      <div class="title">
         <div class="logo"></div>
         <div class="title-options">
-            <div class="btn-menu {{menuActive}}" routerLink="/home">Home</div>
-            <div class="btn-ecommerce {{ecommerceActive}}" routerLink="/e-commerce">E-commerce</div>
-            <div class="btn-campain {{campainActive}}" routerLink="/trafego-pago">Tráfego Pago</div>
-            <div class="btn-social-medias {{socialMEdiaActive}}" routerLink="/midias-sociais">Redes Sociais</div>
-            <div class="btn-landing-page {{landPagesActive}}" routerLink="/landing-pages">Landing Pages</div>
-            <div class="contact" ><span>FALE CONOSCO</span></div>
+          <div class="btn-menu {{menuActive}}" routerLink="/home">Home</div>
+          <div class="btn-ecommerce {{ecommerceActive}}" routerLink="/e-commerce">E-commerce</div>
+          <div class="btn-campain {{campainActive}}" routerLink="/trafego-pago">Tráfego Pago</div>
+          <div class="btn-social-medias {{socialMEdiaActive}}" routerLink="/midias-sociais">
+            Redes Sociais
+          </div>
+          <div class="btn-landing-page {{landPagesActive}}" routerLink="/landing-pages">
+            Landing Pages
+          </div>
+          <div class="contact"><span>FALE CONOSCO</span></div>
         </div>
-
-    </div>
-    <div class="center-text">
-        <span class="title-text">{{titleText}}</span>
-        <div class="no-wrap"> <span class="gradient-text title-text-focus">{{titleTextFocus}}</span> <span class="plain-text title-text-focus">{{titleTextFocusPlanText}}</span> </div>
-    </div>
-    <div class="footer-text">
+      </div>
+      <div class="center-text">
+        <span class="title-text">{{ titleText }}</span>
+        <div class="no-wrap">
+          <span class="gradient-text title-text-focus">{{ displayTitleTextFocus }}</span>
+          <span *ngIf="isTyping" class="typewriter-bar"></span>
+          <span class="plain-text title-text-focus">{{ displayTitleTextFocusPlanText }}</span>
+        </div>
+      </div>
+      <div class="footer-text">
         <span>selecione uma de nossas soluções abaixo e saiba mais</span>
         <div class="arrow-down"></div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
+  
