@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+}
+.header {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('../../assets/headers/menu/background-img.svg') no-repeat center center fixed; /* Use uma imagem de fundo semelhante */
+    background-size: cover;
+    color: #ffffff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    background: url('../../assets/headers/menu/logo-dz.svg') no-repeat center;
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+}
+
+.title-options {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.title-options div {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.title-options div:hover {
+    color: #00aaff;
+}
+
+.contact {
+    padding: 10px 20px;
+    border: 2px solid #00aaff;
+    border-radius: 30px;
+    color: #00aaff;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+.center-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+    font-size: 2.5em;
+}
+
+.center-text span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.center-text span:first-child {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.center-text span:last-child {
+    font-size: 3em;
+    font-weight: bold;
+    color: #00aaff;
+    text-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
+}
+
+.footer-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-text span {
+    font-size: 1.2em;
+    color: #cccccc;
+}
+
+.row {
+    margin-top: 10px;
+    border: 2px solid #00aaff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.row:hover {
+    background-color: #00aaff;
+    transform: scale(1.2);
+}
