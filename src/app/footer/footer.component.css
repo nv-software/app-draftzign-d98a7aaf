@@ -36,6 +36,7 @@ footer {
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
 }
 
 .footer-ico img {
