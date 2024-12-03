@@ -65,7 +65,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
             this.resetActives('landPagesActive');
             break;
           case '/midias-sociais':
-            this.backgroundImg = 'url("../../assets/headers/menu/background-img-lp.svg")';
+            this.backgroundImg = 'url("../../assets/headers/menu/background-img-social.svg")';
             this.titleText='Maximize suas vendas com'
             this.setTypingText(    
               'posts estratégicos no Instagram!',
