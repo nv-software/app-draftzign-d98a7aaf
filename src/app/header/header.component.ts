@@ -27,12 +27,23 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   isTyping: boolean = true;
   displayTitleTextFocus: string = '';
   displayTitleTextFocusPlanText: string = '';
+  footerText:string=''
   typingSpeed: number = 60;
   typingInterval: any;
-
+  isMobile:boolean=false
+  isMenuOpen:boolean = false;
   constructor(private router: Router) {}
 
+  get getIsMobile(){
+    return this.isMobile;
+  }
+
   ngOnInit(): void {
+    this.checkScreenSize();
+    window.addEventListener('resize', () => {
+      this.checkScreenSize();
+    });
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.clearTyping(); // Limpa qualquer texto ou intervalo pendente
@@ -48,6 +59,18 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this.clearTyping(); // Limpa intervalos ao destruir o componente
   }
 
+  checkScreenSize() {
+    this.isMobile = window.innerWidth > 1091;
+  }
+
+  openMenu() {
+    this.isMenuOpen = true;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
   handleRouteChange(url: string): void {
     this.displayTitleTextFocus = '';
     this.displayTitleTextFocusPlanText = '';
@@ -55,15 +78,17 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     switch (url) {
       case '/home':
+        this.footerText='selecione uma de nossas soluções abaixo e saiba mais'
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img.svg',
           'Ajude a sua empresa a ter uma',
-          'presença profissional',
-          ' no digital'
+          'presença profissional ',
+          'no digital'
         );
         this.resetActives('menuActive');
         break;
       case '/landing-pages':
+         this.footerText='Para seu site/e-commerce ou sua marca que deseja aparecer no mercado digital que mais cresce atualmente.'
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-lp.svg',
           'Converta visitantes em clientes com uma',
@@ -73,6 +98,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('landPagesActive');
         break;
       case '/midias-sociais':
+        this.footerText='Sua empresa está “invisivel” no Instagram?'
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-social.svg',
           'Maximize suas vendas com',
@@ -82,6 +108,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('socialMEdiaActive');
         break;
       case '/e-commerce':
+        this.footerText='Venha para o digital e perceba os benefícios de uma loja virtual'
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-ecomm.svg',
           'Transforme sua visão em uma',
@@ -91,6 +118,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('ecommerceActive');
         break;
       case '/trafego-pago':
+        this.footerText='Tráfego pago: Mais clientes, mais resultados.'
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-campain.svg',
           'Nosso tráfego pago trouxe você até aqui?',
