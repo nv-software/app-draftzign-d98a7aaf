@@ -1,10 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-/**
- * Tipo auxiliar para garantir que o método `typeText` só aceite chaves que referenciem strings.
- */
 type StringKeysOfWritable<T> = {
   [K in keyof T]: T[K] extends string ? K : never;
 }[keyof T];
@@ -16,7 +13,7 @@ type StringKeysOfWritable<T> = {
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   menuActive: string = '';
   ecommerceActive: string = '';
   campainActive: string = '';
@@ -27,80 +24,107 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   titleText: string = '';
   titleTextFocus: string = '';
   titleTextFocusPlanText: string = '';
-  isTyping:boolean=true
-  displayTitleText: string = '';
+  isTyping: boolean = true;
   displayTitleTextFocus: string = '';
   displayTitleTextFocusPlanText: string = '';
-  typingSpeed: number = 60; // Velocidade de digitação (ms por letra)
+  typingSpeed: number = 60;
+  typingInterval: any;
 
   constructor(private router: Router) {}
 
-  // get getBackgroundImg() {
-  //   return this.backgroundImg;
-  // }
-
   ngOnInit(): void {
-    
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.clearTyping(); // Limpa qualquer texto ou intervalo pendente
         this.currentPath = event.urlAfterRedirects;
-        this.isTyping = true;
-        switch (event.urlAfterRedirects) {
-          case '/home':
-            this.backgroundImg = 'url("../../assets/headers/menu/background-img.svg")';
-            this.titleText='Ajude a sua empresa a ter uma'
-            this.setTypingText(
-              'presença profissional',
-              ' no digital'
-            );
-            this.resetActives('menuActive');
-            break;
-          case '/landing-pages':
-            this.backgroundImg = 'url("../../assets/headers/menu/background-img-lp.svg")';
-            this.titleText='Converta visitantes em clientes com uma'
-            this.setTypingText(
-              'Landing Page!',
-              ''
-            );
-            this.resetActives('landPagesActive');
-            break;
-          case '/midias-sociais':
-            this.backgroundImg = 'url("../../assets/headers/menu/background-img-social.svg")';
-            this.titleText='Maximize suas vendas com'
-            this.setTypingText(    
-              'posts estratégicos no Instagram!',
-              ''
-            );
-            this.resetActives('socialMEdiaActive');
-            break;
-          case '/e-commerce':
-            this.backgroundImg = 'url("../../assets/headers/menu/background-img-ecomm.svg")';
-            this.titleText='Transforme sua visão em uma'
-            this.setTypingText(
-              'loja online de sucesso!',
-              ''
-            );
-            this.resetActives('ecommerceActive');
-            break;
-          case '/trafego-pago':
-            this.backgroundImg = 'url("../../assets/headers/menu/background-img-campain.svg")';
-            this.titleText='Nosso tráfego pago trouxe você até aqui?'
-            this.setTypingText(
-              'Faremos o mesmo pelo seu negócio!',
-              ''
-            );
-            this.resetActives('campainActive');
-            break;
-          default:
-            break;
-        }
+        this.handleRouteChange(event.urlAfterRedirects);
       }
     });
   }
 
   ngAfterViewInit(): void {}
 
-  resetActives(active: string) {
+  ngOnDestroy(): void {
+    this.clearTyping(); // Limpa intervalos ao destruir o componente
+  }
+
+  handleRouteChange(url: string): void {
+    this.displayTitleTextFocus = '';
+    this.displayTitleTextFocusPlanText = '';
+    this.isTyping = true;
+
+    switch (url) {
+      case '/home':
+        this.setBackgroundAndStartTyping(
+          '../../assets/headers/menu/background-img.svg',
+          'Ajude a sua empresa a ter uma',
+          'presença profissional',
+          ' no digital'
+        );
+        this.resetActives('menuActive');
+        break;
+      case '/landing-pages':
+        this.setBackgroundAndStartTyping(
+          '../../assets/headers/menu/background-img-lp.svg',
+          'Converta visitantes em clientes com uma',
+          'Landing Page!',
+          ''
+        );
+        this.resetActives('landPagesActive');
+        break;
+      case '/midias-sociais':
+        this.setBackgroundAndStartTyping(
+          '../../assets/headers/menu/background-img-social.svg',
+          'Maximize suas vendas com',
+          'posts estratégicos no Instagram!',
+          ''
+        );
+        this.resetActives('socialMEdiaActive');
+        break;
+      case '/e-commerce':
+        this.setBackgroundAndStartTyping(
+          '../../assets/headers/menu/background-img-ecomm.svg',
+          'Transforme sua visão em uma',
+          'loja online de sucesso!',
+          ''
+        );
+        this.resetActives('ecommerceActive');
+        break;
+      case '/trafego-pago':
+        this.setBackgroundAndStartTyping(
+          '../../assets/headers/menu/background-img-campain.svg',
+          'Nosso tráfego pago trouxe você até aqui?',
+          'Faremos o mesmo pelo seu negócio!',
+          ''
+        );
+        this.resetActives('campainActive');
+        break;
+      default:
+        break;
+    }
+  }
+
+  setBackgroundAndStartTyping(
+    imagePath: string,
+    title: string,
+    focus: string,
+    planText: string
+  ): void {
+    const img = new Image();
+    img.src = imagePath;
+
+    img.onload = () => {
+      this.backgroundImg = `url("${imagePath}")`; // Define o fundo somente após carregar
+      this.titleText = title;
+      this.setTypingText(focus, planText); // Inicia a digitação
+    };
+
+    img.onerror = () => {
+      console.error(`Erro ao carregar a imagem: ${imagePath}`);
+    };
+  }
+
+  resetActives(active: string): void {
     this.menuActive = active === 'menuActive' ? 'title-option-active' : '';
     this.ecommerceActive = active === 'ecommerceActive' ? 'title-option-active' : '';
     this.campainActive = active === 'campainActive' ? 'title-option-active' : '';
@@ -108,13 +132,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.landPagesActive = active === 'landPagesActive' ? 'title-option-active' : '';
   }
 
-  setTypingText(focus: string, planText: string) {
-    this.displayTitleTextFocus = '';
-    this.displayTitleTextFocusPlanText = '';
-
-      this.typeText(focus, 'displayTitleTextFocus', () => {
-        this.typeText(planText, 'displayTitleTextFocusPlanText');
-
+  setTypingText(focus: string, planText: string): void {
+    this.typeText(focus, 'displayTitleTextFocus', () => {
+      this.typeText(planText, 'displayTitleTextFocusPlanText');
     });
   }
 
@@ -122,17 +142,27 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     text: string,
     target: StringKeysOfWritable<HeaderComponent>,
     callback?: () => void
-  ) {
+  ): void {
+    this.clearTyping();
     let index = 0;
-    const interval = setInterval(() => {
+
+    this.typingInterval = setInterval(() => {
       if (index < text.length) {
         this[target] += text[index];
         index++;
       } else {
-        this.isTyping = false;
-        clearInterval(interval);
+        clearInterval(this.typingInterval);
+        this.typingInterval = null;
+        this.isTyping = false; // Oculta a barrinha de digitação
         if (callback) callback();
       }
     }, this.typingSpeed);
+  }
+
+  clearTyping(): void {
+    if (this.typingInterval) {
+      clearInterval(this.typingInterval);
+      this.typingInterval = null;
+    }
   }
 }
