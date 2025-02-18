@@ -1,4 +1,9 @@
 .container {
+  display: block;
+}
+
+.e-commerce-mobile {
+  display: none;
 }
 
 .background {
@@ -15,6 +20,7 @@
 
 .flex {
   max-width: 1100px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -206,6 +212,8 @@
 
 .fourth-section .content {
   max-width: 1100px;
+
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -281,7 +289,7 @@
   text-align: left;
 }
 
-.fourth-section .image .image-center {
+.fourth-section .image {
   width: 450px;
   height: 450px;
   background-image: url("../../../assets/ecommerce/clock-and-person.svg"); /* Caminho da imagem */
@@ -303,6 +311,7 @@
 
 .fifth-section .flex {
   max-width: 1100px;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -327,6 +336,7 @@
 }
 
 .footer-text {
+  text-transform: none;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -361,6 +371,8 @@
 }
 .sixth-section .flex {
   max-width: 1100px;
+
+  width: 100%;
   gap: 60px;
   flex-direction: column;
   align-items: center;
@@ -409,3 +421,156 @@
 }
 
 /* -------------------------- */
+
+@media (max-width: 1090px) {
+  .first-section .image,
+  .second-section .image,
+  .fourth-section .image {
+    flex: none;
+    background-position: right;
+    height: 200px;
+    width: 100%;
+  }
+
+  .second-section .image{
+    display: flex;
+    justify-content: end;
+    background-position: left;
+    height: 500px;
+  }
+
+  .text-container {
+    text-align: center;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .e-commerce-mobile {
+    display: block;
+  }
+
+  .first-section {
+    padding: 10vw;
+  }
+
+  .first-section .title,
+  .second-section .title {
+    color: #0066e0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 800;
+    font-size: 70px;
+  }
+
+  .second-section .title {
+    align-items: start;
+    flex-direction: column;
+    color: #ffffff;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    gap: 16px;
+  }
+
+  .footer-title {
+    font-size: 28px;
+  }
+
+  .third-section {
+    padding: 0;
+    color: #151515;
+  }
+
+  .retangle-option:nth-child(odd) {
+    border-right: none !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 16px !important;
+    border-bottom-right-radius: 0 !important;
+    margin-left: 20px;
+  }
+
+  .retangle-option:nth-child(even) {
+    border-left: none !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 16px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 16px !important;
+    margin-right: 20px;
+  }
+
+  .retangle-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .retangle-title span {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .third-section .description {
+    margin-left: 0 !important;
+  }
+
+  .fourth-section {
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .fourth-section .flex {
+    text-align: center;
+    align-items: center;
+  }
+
+  .fourth-section .image {
+    background-position: center;
+    height: 500px;
+  }
+
+  .fifth-section .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fifth-section .title span {
+    font-size: 4em;
+    font-weight: 800;
+  }
+
+  .fifth-section .subtitle {
+    text-align: justify;
+    line-height: 1;
+  }
+
+  .big-span {
+    color: #0066e0;
+    font-size: 3.5em;
+  }
+
+  .footer-text {
+    font-weight: 800;
+  }
+
+  .sixth-section .flex {
+    text-align: center;
+  }
+
+  .sixth-section .focus-span {
+    color: #ededed;
+    background-color: #151515;
+  }
+}
