@@ -1,639 +1,411 @@
-/* Container principal */
-span{
-    font-size: 28px;
-}
 .container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #1E1E1E; /* Fundo preto */
-    color: #fff;
-    
-    box-sizing: border-box;
-}
-.content{
-    max-width: 1100px;
-    margin: auto;
-    padding: 80px 0;
-}
-.background{
-    background-color: #fff;
 }
 
-/* Seção inicial */
+.background {
+  background-color: #ededed;
+}
+
 .first-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 140px 0;
-    padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #151515;
+  color: #ededed;
+  padding: 10vh 5vw;
 }
 
-.first-section .flex {
-    display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-    justify-content: space-between; /* Posiciona as divs nos extremos */
-    gap: 20px; /* Espaçamento entre os itens */
-    max-width: 1100px;
+.flex {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Texto */
-.first-section .text {
-    flex: 1 1 50%; /* Cada item ocupa 50% da largura no desktop */
-    text-align: left; /* Alinha o texto à esquerda */
+.title {
+  font-size: 40px;
+  text-transform: uppercase;
 }
 
-.first-section .text .title span:first-child {
-    display: block;
-    font-size: 55px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 10px;
+.focus-span {
+  color: #151515; /* Azul para SEGUNTE */
+  background: #0066e0;
+  border-radius: 15px;
+  padding: 0 10px;
+  width: fit-content;
 }
 
-.first-section .text .title span:last-child {
-    display: inline-block;
-    font-size: 55px;
-    font-weight: bold;
-    color: #007bff; /* Azul para SEGUNTE */
-    background: rgba(0, 123, 255, 0.2);
-    padding: 5px 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+.text {
+  flex: 1 1 40%;
 }
 
-.first-section .text .subtitle span {
-    font-size: 34px;
-    font-weight: 300;
-    display: block;
-    margin-bottom: 20px;
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 28px;
+  line-height: 28px;
 }
 
-.first-section .text .footer-title span {
-    font-size: 34px;
-    font-weight: bold;
+.subtitle {
+  font-weight: 200;
 }
 
-/* Imagem */
+.footer-title {
+  font-weight: 600;
+}
+
+.image {
+  flex: 1 1 40%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
 .first-section .image {
-    flex: 1 1 50%; /* Cada item ocupa 50% da largura no desktop */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-image: url("../../../assets/ecommerce/idea.svg"); /* Insira o caminho da imagem aqui */
 }
+/* first section -------------- */
 
-.first-section .image .center-image {
-    width: 300px;
-    height: 300px;
-    background-image: url('../../../assets/ecommerce/idea.svg'); /* Insira o caminho da imagem aqui */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Segunda seção */
 .second-section {
-    background-color: #007bff; /* Fundo azul */
-    color: #fff;
-    padding: 40px 20px; /* Espaçamento interno */
-    box-sizing: border-box;
-    /* padding: 140px 0; */
-    padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10vh 5vw;
+  background-color: #0066e0;
+  color: #ffffff;
 }
 
-.second-section .flex {
-    display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: space-between; /* Divide texto e imagem */
-    gap: 20px; /* Espaçamento entre itens */
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Imagem */
 .second-section .image {
-    flex: 1 1 50%; /* Ocupa metade da largura no desktop */
-    display: flex;
-    align-items: center;
-    justify-content: left;
+  background-image: url("../../../assets/ecommerce/veder-machine.svg"); /* Insira o caminho da imagem aqui */
 }
 
-.second-section .image .center-image {
-    width: 550px;
-    height: 550px;
-    background-image: url('../../../assets/ecommerce/veder-machine.svg'); /* Insira o caminho da imagem aqui */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.second-section .title h2,
+.fourth-section .title h2 {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
 }
 
-/* Texto */
-.second-section .text {
-    flex: 1 1 50%; /* Ocupa metade da largura no desktop */
-}
-.second-section .text .title{
-    display: inline-flex;
+.second-section .focus-span {
+  color: #0066e0; /* Azul para PRIMEIRO */
+  background: #ffffff;
 }
 
-.second-section .text .title span:first-child {
-    display: block;
-    font-size: 34px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-}
+/* second-section */
 
-.second-section .text .title span:last-child {
-    display: inline-block;
-    font-size: 34px;
-    font-weight: bold;
-    color: #fff; /* Texto branco */
-    background: rgba(255, 255, 255, 0.2); /* Fundo translúcido */
-    padding: 5px 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.second-section .text .subtitle span {
-    font-size: 28px;
-    font-weight: 300;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.second-section .text .footer-text span {
-    font-size: 28px;
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.2); /* Fundo translúcido */
-    padding: 10px;
-    border-radius: 8px;
-    display: inline-block;
-    line-height: 1.4;
-}
-
-/* Estilo para a terceira seção */
 .third-section {
-    background-color: #fff; /* Fundo branco */
-    padding: 40px 20px; /* Espaçamento interno */
-    box-sizing: border-box;
-    color: #000; /* Texto preto */
-    /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  padding: 10vh 5vw;
+  background-color: #ededed; /* Fundo branco */
+}
+
+.third-section .content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 /* Título */
 .third-section .content .title span {
-    display: inline-block;
-    font-size: 45px;
-    font-weight: bold;
-    background: #000;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    text-align: left;
+  display: inline-block;
+  font-size: 45px;
+  font-weight: bold;
+  background: #151515;
+  color: #ededed;
+  padding: 5px 10px;
+  border-radius: 15px;
+  text-align: left;
 }
 
 /* Subtítulo */
 .third-section .subtitle {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 40px;
-    max-width: 1200px;
-    margin: auto;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.retangle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Blocos de benefício */
 .third-section .retangle-option {
-    border: 2px dashed #333;
-    border-radius: 16px;
-    padding: 0 80px 20px 80px;
-    margin-bottom: 20px;
-    max-width: 1100px;
-    margin: 40px auto;
+  border: 2px dashed #333;
+  border-radius: 16px;
+  padding: 0 80px 20px 80px;
 }
 
 .third-section .retangle-option .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
 }
 
 .third-section .retangle-option .image {
-    width: 160px;
-    height: 180px;
-    background-color: #007bff; /* Cor azul para o número */
-    color: #fff;
-    font-weight: bold;
-    border-radius: 0 0 16px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: -3px;
-}
-
-.image span{
-    font-size: 95px;
+  flex: none;
+  font-size: 95px;
+  width: 160px;
+  background-color: #0066e0; /* Cor azul para o número */
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0 0 16px 16px;
+  text-align: center;
 }
 
 .third-section .retangle-option .description {
-    flex: 1;
-    text-align: left;
-    margin-left: 20px;
-    font-size: 28px;
-    color: #333;
-    font-weight: 400;
-    line-height: 1.5;
+  flex: 1;
+  text-align: left;
+  margin-left: 28px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .third-section .retangle-option:nth-child(even) .image {
-    order: 2; /* Coloca a imagem à direita nos itens pares */
-    margin-left: 0;
+  order: 2; /* Coloca a imagem à direita nos itens pares */
 }
 
 .third-section .retangle-option:nth-child(even) .description {
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
+  text-align: left;
+  margin-right: 28px;
 }
 
 /* Rodapé da seção */
 .third-section .and-more {
-    margin-top: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
 
 .third-section .footer {
-    margin-top: 20px;
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #666;
-    text-align: center;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #666;
+  text-align: center;
 }
 
-/* Quarta seção */
+/* third-section */
+
 .fourth-section {
-    background-color: #007bff; /* Fundo azul */
-    color: #fff;
-    padding: 40px 20px; /* Espaçamento interno */
-    box-sizing: border-box;
-    text-align: left; /* Centraliza o texto inicialmente */
-    border-radius: 75px 75px 0 0;
+  display: flex;
+  justify-content: center;
+  padding: 10vh 5vw;
+  background-color: #0066e0; /* Fundo azul */
+  color: #ededed;
+  border-radius: 75px 75px 0 0;
+  font-weight: 200;
+}
+
+.fourth-section .content {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo-background {
+  background-image: url("../../../assets/ecommerce/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 28px;
 }
 
 /* Título */
-.fourth-section .title span:first-child {
-    display: inline-block;
-    font-size: 45px;
-    font-weight: bold;
-    margin-right: 5px;
+.fourth-section .title {
+  color: #ededed;
+  font-size: 45px;
+  font-weight: 800;
 }
 
-.fourth-section .title span:last-child {
-    display: inline-block;
-    font-size: 45px;
-    font-weight: bold;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.2); /* Fundo translúcido */
-    padding: 5px 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+.fourth-section .title .focus-span {
+  font-size: 45px;
+  color: #0066e0;
+  background: #ededed; /* Fundo translúcido */
 }
 
 /* Subtítulo */
 .fourth-section .subtitle span {
-    display: block;
-    font-size: 28px;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 40px;
+  display: block;
+  font-size: 28px;
+  line-height: 1.6;
+}
+.fourth-section strong {
+  font-weight: 800;
 }
 
 /* Descrição e imagem */
 .fourth-section .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Espaça texto e imagem */
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaça texto e imagem */
+  gap: 20px;
 }
 
 .fourth-section .description {
-    flex: 1 1 50%; /* Ocupa metade da largura */
-    text-align: left; /* Alinha texto à esquerda */
-    font-size: 28px;
-    line-height: 1.6;
-    font-weight: 400;
+  flex: 1 1 50%; /* Ocupa metade da largura */
+  text-align: left; /* Alinha texto à esquerda */
+  font-size: 28px;
+  line-height: 1.6;
 }
 
 .fourth-section .description span {
-    display: block;
-    font-size: 28px;
-    line-height: 1.6;
-    color: #fff;
-    font-weight: 300;
+  display: inline-block;
+  font-size: 28px;
+  line-height: 1.6;
+  color: #fff;
 }
 
 .fourth-section .description span strong {
-    font-weight: bold;
-    color: #fff; /* Destaque em texto */
+  font-weight: bold;
+  color: #fff; /* Destaque em texto */
 }
 
 /* Imagem */
 .fourth-section .image {
-    flex: 1 1 50%; /* Ocupa metade da largura */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex: 1 1 50%; /* Ocupa metade da largura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.fourth-section  .content .title{
-    text-align: left;
+.fourth-section .content .title {
+  text-align: left;
 }
 
 .fourth-section .image .image-center {
-    width: 450px;
-    height: 450px;
-    background-image: url('../../../assets/ecommerce/clock-and-person.svg'); /* Caminho da imagem */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 450px;
+  height: 450px;
+  background-image: url("../../../assets/ecommerce/clock-and-person.svg"); /* Caminho da imagem */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+/* fourth-section */
 
 .fifth-section {
-    background-color: #e6e6e6; /* Fundo cinza claro */
-    text-align: center;
-    padding: 40px 20px;
-
+  display: flex;
+  justify-content: center;
+  padding: 10vh 20vw;
+  color: #ededed;
+  background-color: #151515; /* Fundo branco */
+  text-align: center;
 }
 
-.title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #000000; /* Texto preto */
-    text-transform: uppercase; /* Texto em caixa alta */
-    padding: 80px 0 0 0;
+.fifth-section .flex {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fifth-section .title .focus-span {
+  font-size: 45px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.fifth-section .flex {
+  font-weight: 200;
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.big-span {
+  font-size: 4em;
+  font-weight: 800;
+}
+
+.footer-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+  gap: 8px;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #d9d9d9; /* Cor da seta */
+  cursor: pointer;
+}
+
+.arrow-down:hover {
+  border-top: 20px solid #0066e0; /* Cor da seta */
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.sixth-section {
+  display: flex;
+  justify-content: center;
+  background-color: #d9d9d9; /* Fundo cinza claro */
+  text-align: center;
+  padding: 10vh 5vw;
+}
+.sixth-section .flex {
+  max-width: 1100px;
+  gap: 60px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-span {
-    display: inline-block;
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.2;
+  font-size: 50px;
+  color: #151515;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.description-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .description-span {
-    display: block;
-    font-size: 28px;
-    color: #333333; /* Texto cinza escuro */
+  font-size: 28px;
+  color: #333333; /* Texto cinza escuro */
 }
 
 .description-span strong {
-    font-weight: bold;
-}
-
-.content-cta-button {
-    margin-top: 30px;
+  font-weight: bold;
 }
 
 .button {
-    background-color: #007bff; /* Azul vibrante */
-    padding: 15px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+  background-color: #0066e0; /* Azul vibrante */
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 800;
+  font-size: 28px;
 }
 
 .button:hover {
-    background-color: #0056b3; /* Azul mais escuro no hover */
+  background-color: #0066e0; /* Azul mais escuro no hover */
 }
 
 .button-text {
-    color: #ffffff; /* Texto branco */
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
+  color: #ededed; /* Texto branco */
+  font-size: 28px;
+  text-transform: uppercase;
 }
 
-
-
-@media (max-width: 1120px) {
-
-.second-section .text .title{
-    display: block;
-}
-.fourth-section .image .image-center {
-    width: 350px;
-    height: 350px;
-    background-image: url('../../../assets/ecommerce/clock-and-person-mobile.svg'); /* Caminho da imagem */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .first-section .flex {
-        flex-direction: column; /* Empilha os elementos no mobile */
-        align-items: center; /* Centraliza os itens no mobile */
-        gap: 30px;
-    }
-
-    .text {
-        text-align: center !important; /* Centraliza o texto no mobile */
-    }
-
-    .first-section .image .center-image {
-        width: 150px;
-        height: 150px; /* Reduz a imagem no mobile */
-    }
-
-    .second-section .flex {
-        flex-direction: column; /* Empilha os elementos no mobile */
-        align-items: center; /* Centraliza os itens */
-        gap: 30px; /* Espaço extra no mobile */
-    }
-
-    .second-section .image .center-image {
-        width: 200px;
-        height: 200px; /* Reduz o tamanho da imagem */
-    }
-    .second-section .text .title{
-        display: block;
-    }
-
-    .second-section .text .title span:first-child,
-    .second-section .text .title span:last-child {
-        font-size: 24px; /* Reduz o tamanho do título no mobile */
-    }
-
-    .second-section .text .subtitle span {
-        font-size: 21px; /* Texto menor para subtítulos */
-    }
-
-    .second-section .text .footer-text span {
-        font-size: 21px; /* Ajusta tamanho do texto */
-    }
-    .third-section .retangle-option {
-        flex-direction: column; /* Empilha os itens */
-        padding: 0px 10px;
-    }
-
-    .third-section .retangle-option .flex {
-        /* flex-direction: column; */
-        padding: 5px;
-        text-align: start;
-        align-items: flex-start;
-    }
-
-    .third-section .retangle-option .image {
-        margin: 0 0 10px 0; /* Margem abaixo da imagem */
-        width: 80px;
-        height: 100px; /* Tamanho reduzido */
-        /* margin-top: -22px; */
-    }
-    .image{
-        border-radius: 0 0 10px 10px;
-    }
-
-    .image span{
-        font-size: 35px;
-    }
-
-    .third-section .retangle-option .description {
-        margin: 0;
-        text-align: center; /* Centraliza o texto no mobile */
-    }
-
-    .third-section .title span {
-        font-size: 24px; /* Reduz tamanho do título */
-    }
-
-    .third-section .subtitle {
-        font-size: 21px; /* Reduz subtítulo */
-    }
-
-    .third-section .footer {
-        font-size: 21px; /* Ajusta tamanho do texto do rodapé */
-    }
-    .fourth-section .flex {
-        flex-direction: column; /* Empilha texto e imagem */
-        align-items: center; /* Centraliza no mobile */
-    }
-
-    .fourth-section .description {
-        display: none;
-    }
-
-    .fourth-section .image .image-center {
-        width: 350px;
-        height: 350px;
-        background-image: url('../../../assets/ecommerce/clock-and-person-mobile.svg'); /* Caminho da imagem */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .fourth-section .title span:first-child,
-    .fourth-section .title span:last-child {
-        font-size: 24px; /* Reduz tamanho do título */
-    }
-
-    .fourth-section .subtitle span {
-        font-size: 21px; /* Subtítulo menor */
-    }
-
-    .fourth-section .description span {
-        font-size: 21px; /* Descrição menor */
-    }
-}
-
-@media (max-width: 480px) {
-    .first-section .text .title span:first-child,
-    .first-section .text .title span:last-child {
-        font-size: 24px; /* Reduz o tamanho do título no mobile */
-    }
-
-    .first-section .text .subtitle span {
-        font-size: 21px; /* Reduz subtítulo */
-    }
-
-    .first-section .text .footer-title span {
-        font-size: 21px; /* Ajusta texto no mobile */
-    }
-
-    .first-section .image .center-image {
-        width: 120px;
-        height: 120px; /* Imagem menor em telas muito pequenas */
-    }
-
-    .second-section .image .center-image {
-        width: 150px;
-        height: 150px; /* Imagem ainda menor em telas pequenas */
-    }
-
-    .second-section .text .title span:first-child,
-    .second-section .text .title span:last-child {
-        font-size: 31px; /* Ajusta o tamanho do título */
-    }
-
-    .second-section .text .subtitle span {
-        font-size: 21px; /* Ajuste fino no subtítulo */
-    }
-
-    .second-section .text .footer-text span {
-        font-size: 21px; /* Ajuste fino no texto do rodapé */
-        line-height: 1.2; /* Reduz o espaçamento */
-    }
-    .third-section .retangle-option {
-        padding: 0;
-    }
-
-    .third-section .retangle-option .image {
-        width: 80px;
-        height: 100px; /* Tamanho menor no mobile pequeno */
-        font-size: 20px;
-        margin-top: -17px;
-        margin:-5px 10px 10px 10px;
-    }
-
-    .third-section .retangle-option .description {
-        font-size: 18px; /* Texto menor */
-    }
-
-    .third-section .footer {
-        font-size: 21px; /* Ajusta o texto do rodapé */
-        line-height: 1.4;
-    }
-    .fourth-section .image .image-center {
-        width: 350px;
-        height: 350px;
-        background-image: url('../../../assets/ecommerce/clock-and-person-mobile.svg'); /* Caminho da imagem */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .fourth-section .title span:first-child,
-    .fourth-section .title span:last-child {
-        font-size: 20px; /* Ajusta título */
-    }
-
-    .fourth-section .subtitle span {
-        font-size: 21px; /* Ajusta subtítulo */
-    }
-    .fourth-section .description {
-        display: none;
-    }
-
-    .fourth-section .description span {
-        font-size: 21px; /* Ajusta descrição */
-    }
-}
+/* -------------------------- */
