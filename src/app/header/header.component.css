@@ -121,21 +121,6 @@
   font-size: 24px;
 }
 
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #d9d9d9; /* Cor da seta */
-  cursor: pointer;
-}
-
-.arrow-down:hover {
-  border-top: 20px solid #0066e0; /* Cor da seta */
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
-
 @keyframes blink-caret {
   from,
   to {

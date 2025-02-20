@@ -118,7 +118,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('ecommerceActive');
         break;
       case '/trafego-pago':
-        this.footerText='Tráfego pago: Mais clientes, mais resultados.'
+        this.footerText='Vendas em alta com os anúncios certos!'
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-campain.svg',
           'Nosso tráfego pago trouxe você até aqui?',
