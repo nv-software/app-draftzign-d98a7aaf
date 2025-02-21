@@ -8,7 +8,6 @@
   font-size: 32px; /* Texto menor em dispositivos menores */
   padding: 12vh 0; /* Espaçamento para telas menores */
   gap: 5vh;
-  text-align: center;
 }
 
 .footer-ico {

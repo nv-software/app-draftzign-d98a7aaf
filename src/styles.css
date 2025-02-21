@@ -1,22 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  background-color: #151515;
-  font-family: "Kanit", serif; /* Família tipográfica */
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background-color: #151515;
+  font-family: "Kanit", serif; /* Família tipográfica */
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+h5 {
+  font-weight: 200;
+  font-size: 24px;
+}
+
 ul {
   list-style: none;
 }
 
+p {
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.section {
+  padding: 10vh 5vw;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.flex-column-start {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.flex-row-center {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.bg-black {
+  background-color: #151515;
+}
+
+.font-black {
+  color: #151515;
+}
+
+.bg-blue {
+  background-color: #0066e0;
+}
+
+.font-blue {
+  color: #0066e0;
+}
+
+.bg-white {
+  background-color: #ededed; /* Texto branco */
+}
+
+.font-white {
+  color: #ededed; /* Texto branco */
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .focus-span {
-  color: #151515; /* Azul para SEGUNTE */
-  background: #0066e0;
   border-radius: 10px;
   padding: 0 10px;
   width: fit-content;
@@ -37,22 +147,42 @@ ul {
   transition: all 0.3s ease;
 }
 
-.button {
-  background-color: #0066e0; /* Azul vibrante */
+.button-talk-to-us {
+  border: none;
   padding: 15px 30px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-weight: 800;
-  font-size: 28px;
-}
-
-.button:hover {
-  background-color: #0066e0; /* Azul mais escuro no hover */
-}
-
-.button-text {
-  color: #ededed; /* Texto branco */
   font-size: 28px;
   text-transform: uppercase;
+  font-weight: 800;
+}
+
+.bg-image {
+  flex: 1 1 40%;
+  height: 400px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.big-span {
+  font-size: 50px;
+  line-height: 1;
+}
+
+@media (max-width: 1090px) {
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .bg-image {
+    flex: none;
+    height: 300px;
+  }
 }
