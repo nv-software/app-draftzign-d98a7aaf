@@ -31,14 +31,6 @@
   text-transform: uppercase;
 }
 
-.focus-span {
-  color: #151515; /* Azul para SEGUNTE */
-  background: #0066e0;
-  border-radius: 15px;
-  padding: 0 10px;
-  width: fit-content;
-}
-
 .text {
   flex: 1 1 40%;
 }
@@ -347,21 +339,6 @@
   font-size: 24px;
 }
 
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #d9d9d9; /* Cor da seta */
-  cursor: pointer;
-}
-
-.arrow-down:hover {
-  border-top: 20px solid #0066e0; /* Cor da seta */
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
-
 .sixth-section {
   display: flex;
   justify-content: center;
@@ -398,26 +375,6 @@
 
 .description-span strong {
   font-weight: bold;
-}
-
-.button {
-  background-color: #0066e0; /* Azul vibrante */
-  padding: 15px 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 800;
-  font-size: 28px;
-}
-
-.button:hover {
-  background-color: #0066e0; /* Azul mais escuro no hover */
-}
-
-.button-text {
-  color: #ededed; /* Texto branco */
-  font-size: 28px;
-  text-transform: uppercase;
 }
 
 /* -------------------------- */
