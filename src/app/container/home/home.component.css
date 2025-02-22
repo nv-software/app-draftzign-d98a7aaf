@@ -1,20 +1,6 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: #e6e6e6;
-
-  padding: 5vw;
-}
-
 .title {
-  font-size: 22px;
   font-weight: 100;
-  line-height: 1.6;
   text-align: justify;
-  padding: 0 5vw;
 }
 
 .services-container {
@@ -22,15 +8,15 @@
   justify-content: start;
   flex-direction: column;
   gap: 5vh;
-  padding: 5vw;
+  padding: 5vw 0;
 }
 
 .services-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.content {
+.card{
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -40,10 +26,13 @@
   width: 40%;
 }
 
+.card p {
+  font-weight: 100;
+}
+
 .ico {
   width: 50px;
   height: 50px;
-  color: #fff;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -60,23 +49,11 @@
   background-image: url("/assets/home/landing-pages-ico.svg");
 }
 
-.content-title {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.content-subtitle {
-  color: #bbb; /* Cor suave para o subtítulo */
-  font-weight: 100;
-  line-height: 1.5;
-}
-
 .cta-know-more {
   display: flex;
   align-items: center;
   cursor: pointer;
   font-size: 20px;
-  color: #0066e0;
   font-weight: bold;
 }
 
@@ -106,7 +83,7 @@
     width: 100%;
   }
 
-  .content {
+  .card{
     align-items: center;
     text-align: center; /* Centraliza todo o texto */
     background-color: #222;
@@ -117,8 +94,6 @@
 
   .title {
     font-size: 20px; /* Aumenta um pouco o texto do título */
-    line-height: 1.8; /* Espaçamento maior entre linhas */
-    text-align: center; /* Garante centralização */
   }
 
   .ico {
@@ -130,11 +105,6 @@
   .content-title {
     font-size: 26px; /* Aumenta o tamanho do título */
     font-weight: bold;
-  }
-
-  .content-subtitle {
-    font-size: 18px; /* Ajusta o tamanho do subtítulo */
-    line-height: 1.6;
   }
 
   .cta-know-more {
@@ -165,9 +135,6 @@
   .content-title span {
     font-size: 26px; /* Menor título */
   }
-  .content-subtitle span {
-    font-size: 18px; /* Ajuste fino no subtítulo */
-  }
   .cta-know-more span {
     font-size: 26px; /* Fonte menor para call-to-action */
   }
@@ -185,9 +152,6 @@
   }
   .content-title span {
     font-size: 26px; /* Menor título */
-  }
-  .content-subtitle span {
-    font-size: 18px; /* Ajuste fino no subtítulo */
   }
   .cta-know-more span {
     font-size: 26px; /* Fonte menor para call-to-action */
