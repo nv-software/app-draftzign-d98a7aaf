@@ -14,7 +14,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
 }
 
 .navigation.paragraph {
@@ -50,7 +49,6 @@
   display: flex;
   flex-direction: row;
   align-items: start;
-  gap: 20px;
 }
 
 .plan {
@@ -59,7 +57,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
   padding: 20px;
   border-radius: 10px;
   font-size: 20px;
@@ -80,26 +77,22 @@
 .benefits {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   font-weight: 200;
 }
 
 .benefits-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   line-height: 1;
 }
 
 .ad-budget {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .plan-value-content {
   display: flex;
-  gap: 10px;
   align-items: start;
   color: #9f9f9f;
   font-weight: 200;
@@ -122,7 +115,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   color: #9f9f9f;
 }
 
