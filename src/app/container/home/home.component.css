@@ -11,31 +11,15 @@
   padding: 5vw 0;
 }
 
+.card p {
+  font-weight: 100;
+}
+
 .services-row {
   display: flex;
   justify-content: space-between;
 }
 
-.card{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  text-align: left;
-  gap: 10px;
-  font-size: 20px;
-  width: 40%;
-}
-
-.card p {
-  font-weight: 100;
-}
-
-.ico {
-  width: 50px;
-  height: 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
 .campain-ico {
   background-image: url("/assets/home/campain-ico.svg");
 }
@@ -69,7 +53,6 @@
 }
 
 @media (max-width: 1090px) {
-
   .services-container {
     align-items: center;
     justify-items: center;
@@ -83,7 +66,7 @@
     width: 100%;
   }
 
-  .card{
+  .card {
     align-items: center;
     text-align: center; /* Centraliza todo o texto */
     background-color: #222;
@@ -126,7 +109,6 @@
 }
 
 @media (max-width: 769px) {
-
   .ico {
     width: 60px;
     height: 60px;

@@ -1,0 +1,33 @@
+.hand-phone {
+  background-image: url("../../../assets/social-media/hand-phone.svg");
+  background-position: left;
+  width: 1300px;
+  height: 1000px;
+}
+
+.think-people {
+  background-image: url("../../../assets/social-media/think-people.svg");
+  background-position: right;
+}
+
+.card {
+  align-items: center;
+  text-align: center; /* Centraliza todo o texto */
+  width: 100%;
+  height: 100%;
+  padding: 5vh;
+  border-radius: 20px;
+  background-color: #15151599;
+}
+
+.first-impression-icon {
+  background-image: url("../../../assets/social-media/first-impression-icon.svg");
+}
+
+.visual-story-icon {
+  background-image: url("../../../assets/social-media/visual-story-icon.svg");
+}
+
+.engaging-content-icon {
+  background-image: url("../../../assets/social-media/engaging-content-icon.svg");
+}
