@@ -1,4 +1,4 @@
-.header {
+header {
   background-repeat: no-repeat;
   background-position: center;
   background-origin: center;
@@ -16,72 +16,39 @@
   height: 100%;
 }
 
-.title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5vh 5vw;
-}
-
 .logo {
-  background: url("../../assets/headers/menu/logo-dz.svg") no-repeat center;
-  width: 15vw;
-  height: 8vh;
-  background-size: contain;
+  flex: 1 1 30%;
+  background: url("../../assets/headers/menu/logo-dz.svg") no-repeat left;
+  height: 50px;
 }
 
-.title-options {
+.nav-links {
   display: flex;
-  gap: 2vw;
   align-items: center;
   color: #ededed;
   cursor: pointer;
-  font-weight: lighter;
+  font-weight: 200;
   font-size: 18px;
 }
 
-.title-options div:hover {
+.nav-links li:hover {
   color: #0066e0;
   transition: color 0.3s ease-in-out;
 }
 
-.title-option-active {
+.nav-link-active {
   color: #0066e0;
   font-weight: 900;
 }
 
-.contact {
-  padding: 5px 10px;
-  border: 2px solid #0066e0;
-  border-radius: 30px;
-  color: #0066e0;
-  font-weight: 600;
-}
-
-.center-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  font-size: 48px;
-}
-
 .title-text {
-  font-weight: 100; /* Manter o peso leve */
   word-wrap: break-word; /* Permitir quebra de palavras longas */
   white-space: normal; /* Permitir quebra de linha */
   display: inline-block; /* Garante comportamento adequado no fluxo */
-  line-height: 1.3; /* Aumentar o espaçamento entre as linhas */
-}
-
-.no-wrap {
-  display: inline-block; /* Garante que o conteúdo seja tratado como um único bloco */
-  white-space: nowrap; /* Evita quebra de linha */
-  overflow: hidden; /* Impede overflow caso o container seja menor */
 }
 
 .gradient-text {
+  display: inline-block;
   background: linear-gradient(90deg, #8800ff, #0066e0); /* Gradiente */
   background-clip: text;
   -webkit-background-clip: text; /* Define o gradiente como o "texto" */
@@ -89,18 +56,10 @@
   font-weight: bold;
 }
 
-.title-text-focus {
-  word-wrap: break-word; /* Permitir quebra de palavras longas */
-  white-space: normal; /* Permitir quebra de linha */
-  display: inline-block; /* Garante comportamento adequado no fluxo */
-  line-height: 1.3; /* Aumentar o espaçamento entre as linhas */
-  padding: 0 0 0 10px;
-}
-
 .typewriter-bar {
   display: inline-block;
   width: 4px;
-  height: 1.2em; /* Altura proporcional ao texto */
+  height: 40px; /* Altura proporcional ao texto */
   background-color: #0066e0;
   animation: blink-caret 0.5s step-end infinite; /* Piscar continuamente */
   vertical-align: text-bottom; /* Alinha com a base do texto */
@@ -110,7 +69,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 5vw;
   gap: 8px;
   font-weight: 300;
   font-size: 24px;
@@ -128,59 +86,20 @@
 
 @media (max-width: 1090px) {
   .typewriter-bar {
-    height: 0.7em; /* Altura proporcional ao texto */
+    height: 30px; /* Altura proporcional ao texto */
   }
 
   .logo {
-    min-width: 150px;
+    height: 40px;
+    background-position: center;
   }
 }
 
 @media (max-width: 769px) {
-  .title {
-    padding: 10px;
-  }
-
-  .contact {
-    padding: 10px 10px;
-    font-size: 10px;
-  }
-  .title-text {
-    font-size: 28px;
-    gap: 5px;
-  }
-  .title-text-focus {
-    font-size: 28px;
-    gap: 5px;
-  }
   .footer-text {
     font-size: 18px;
-  }
-
-  .gradient-text,
-  .plain-text {
-    display: inline-block;
-    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
-  .center-text {
-    font-size: 28px; /* Ajusta ainda mais o tamanho */
-    gap: 8px;
-  }
-  .title-text {
-    font-size: 28px;
-    gap: 5px;
-  }
-  .title-text-focus {
-    font-size: 28px;
-    gap: 5px;
-  }
-
-  .gradient-text,
-  .plain-text {
-    font-size: 1em;
-    word-break: break-word; /* Garante quebra de texto em palavras grandes */
-  }
 }
