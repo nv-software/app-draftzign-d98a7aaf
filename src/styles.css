@@ -10,6 +10,17 @@ body {
   font-family: "Kanit", serif; /* Família tipográfica */
 }
 
+/* html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: #151515;
+  font-family: "Kanit", serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
+
 h1 {
   font-size: 100px;
   font-weight: 800;
@@ -62,6 +73,7 @@ p {
   padding: 10vh 5vw;
   display: flex;
   justify-content: center;
+  /* min-height: 500px; */
 }
 
 .flex-column-center {
@@ -227,7 +239,7 @@ p {
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 80px;
   }
@@ -258,7 +270,7 @@ p {
   }
 }
 
-@media(max-width: 640px) {
+@media (max-width: 640px) {
   .bg-image {
     flex: none;
     height: 200px;

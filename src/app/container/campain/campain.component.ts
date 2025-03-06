@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+// import {MatIconModule} from '@angular/material/icon'
 @Component({
   selector: 'app-campain',
   standalone: true,
   templateUrl: './campain.component.html',
   styleUrl: './campain.component.css',
-  imports: [MatSlideToggleModule]
+  // imports: [MatIconModule],
 })
 export class CampainComponent {
 
