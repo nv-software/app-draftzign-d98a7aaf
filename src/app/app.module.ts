@@ -14,7 +14,7 @@ import { HomeComponent } from './container/home/home.component';
 import { CampainComponent } from './container/campain/campain.component';
 
 export const routes: Routes = [
-    
+
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'contato', component: ContactComponent },
     { path: 'e-commerce', component: EcommerceComponent },
@@ -22,14 +22,14 @@ export const routes: Routes = [
     { path: 'landing-pages', component: LandingPagesComponent },
     { path: 'midias-sociais', component: SocialMediaComponent },
     { path: 'trafego-pago', component: CampainComponent },
-    { path: '**', redirectTo: 'home' }, 
+    { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'disabled'}),
     BrowserModule,
     FooterComponent,
     HeaderComponent,

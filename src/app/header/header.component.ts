@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import {
   RouterModule,
   ActivatedRoute,
@@ -7,6 +13,7 @@ import {
 } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
+import { UtilsService } from '../service/utils.service';
 
 type StringKeysOfWritable<T> = {
   [K in keyof T]: T[K] extends string ? K : never;
@@ -39,10 +46,35 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   typingInterval: any;
   isMobile: boolean = false;
   isMenuOpen: boolean = false;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private utilsService: UtilsService) {}
 
+  openWhatsapp() {
+    this.utilsService.openWhatsapp('');
+  }
   get getIsMobile() {
     return this.isMobile;
+  }
+
+  openMenu() {
+    const sidenav = document.getElementById('sidenav');
+
+    if (!sidenav) return;
+
+    sidenav.classList.add('sidenav');
+    sidenav.classList.remove('hidden-sidenav');
+
+    sidenav.style.display = 'flex';
+  }
+
+  closeMenu() {
+    const sidenav = document.getElementById('sidenav');
+
+    if (!sidenav) return;
+
+    sidenav.classList.add('hidden-sidenav');
+    sidenav.classList.remove('sidenav');
+
+    sidenav.style.display = 'none';
   }
 
   ngOnInit(): void {
@@ -53,6 +85,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.closeMenu();
         this.clearTyping(); // Limpa qualquer texto ou intervalo pendente
         this.currentPath = event.urlAfterRedirects;
         this.handleRouteChange(event.urlAfterRedirects);
@@ -68,14 +101,6 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   checkScreenSize() {
     this.isMobile = window.innerWidth > 1091;
-  }
-
-  openMenu() {
-    this.isMenuOpen = true;
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
   }
 
   handleRouteChange(url: string): void {
@@ -166,8 +191,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this.menuActive = active === 'menuActive' ? 'nav-link-active' : '';
     this.ecommerceActive =
       active === 'ecommerceActive' ? 'nav-link-active' : '';
-    this.campainActive =
-      active === 'campainActive' ? 'nav-link-active' : '';
+    this.campainActive = active === 'campainActive' ? 'nav-link-active' : '';
     this.socialMEdiaActive =
       active === 'socialMEdiaActive' ? 'nav-link-active' : '';
     this.landPagesActive =
