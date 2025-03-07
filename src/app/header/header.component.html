@@ -17,7 +17,12 @@
           <li class="{{ landPagesActive }}" routerLink="/landing-pages">
             Landing Pages
           </li>
-          <span class="button-talk-to-us-outline-small">FALE CONOSCO</span>
+          <a
+            target="_blank"
+            href="https://wa.me/5511993477055"
+            class="button-talk-to-us-outline-small"
+            >FALE CONOSCO</a
+          >
         </ul>
       </nav>
     </div>
@@ -29,8 +34,6 @@
         (click)="openMenu()"
       />
       <div class="bg-image logo"></div>
-
-      <!-- <div></div> -->
     </div>
     <div class="flex-column-center some-gap text-center title-text">
       <h2>{{ titleText }}</h2>
@@ -44,7 +47,14 @@
     </div>
     <div class="paragraph flex-column-center medium-gap text-center">
       <p>{{ footerText }}</p>
-      <div class="arrow-down"></div>
+      <span>
+        <mat-icon
+          aria-hidden="false"
+          class="arrow-down"
+          aria-label="Example home icon"
+          fontIcon="arrow_drop_down"
+        ></mat-icon
+      ></span>
     </div>
   </div>
 </header>

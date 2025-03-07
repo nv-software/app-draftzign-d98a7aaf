@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import {
   RouterModule,
   ActivatedRoute,
@@ -6,6 +6,7 @@ import {
   NavigationEnd,
 } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
 
 type StringKeysOfWritable<T> = {
   [K in keyof T]: T[K] extends string ? K : never;
@@ -14,7 +15,8 @@ type StringKeysOfWritable<T> = {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, BrowserModule],
+  imports: [RouterModule, BrowserModule, MatIconModule],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
