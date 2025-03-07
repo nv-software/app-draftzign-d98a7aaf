@@ -4,14 +4,11 @@ WORKDIR /usr/local/app
 
 RUN chmod 777 -R /usr/local/app
 
-
-COPY package*.json ./
+COPY . .
 
 RUN npm install --force
 
 ENV PATH /usr/local/app/node_modules/.bin:$PATH
-
-COPY . .
 
 EXPOSE 4200
 
