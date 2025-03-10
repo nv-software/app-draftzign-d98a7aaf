@@ -1,6 +1,19 @@
-import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
-import { RouterModule, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import {
+  RouterModule,
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { UtilsService } from '../service/utils.service';
 
 type StringKeysOfWritable<T> = {
   [K in keyof T]: T[K] extends string ? K : never;
@@ -9,7 +22,8 @@ type StringKeysOfWritable<T> = {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, BrowserModule],
+  imports: [RouterModule, BrowserModule, MatIconModule],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -27,15 +41,40 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   isTyping: boolean = true;
   displayTitleTextFocus: string = '';
   displayTitleTextFocusPlanText: string = '';
-  footerText:string=''
+  footerText: string = '';
   typingSpeed: number = 60;
   typingInterval: any;
-  isMobile:boolean=false
-  isMenuOpen:boolean = false;
-  constructor(private router: Router) {}
+  isMobile: boolean = false;
+  isMenuOpen: boolean = false;
+  constructor(private router: Router, private utilsService: UtilsService) {}
 
-  get getIsMobile(){
+  openWhatsapp() {
+    this.utilsService.openWhatsapp('');
+  }
+  get getIsMobile() {
     return this.isMobile;
+  }
+
+  openMenu() {
+    const sidenav = document.getElementById('sidenav');
+
+    if (!sidenav) return;
+
+    sidenav.classList.add('sidenav');
+    sidenav.classList.remove('hidden-sidenav');
+
+    sidenav.style.display = 'flex';
+  }
+
+  closeMenu() {
+    const sidenav = document.getElementById('sidenav');
+
+    if (!sidenav) return;
+
+    sidenav.classList.add('hidden-sidenav');
+    sidenav.classList.remove('sidenav');
+
+    sidenav.style.display = 'none';
   }
 
   ngOnInit(): void {
@@ -46,6 +85,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.closeMenu();
         this.clearTyping(); // Limpa qualquer texto ou intervalo pendente
         this.currentPath = event.urlAfterRedirects;
         this.handleRouteChange(event.urlAfterRedirects);
@@ -63,14 +103,6 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isMobile = window.innerWidth > 1091;
   }
 
-  openMenu() {
-    this.isMenuOpen = true;
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
-  }
-
   handleRouteChange(url: string): void {
     this.displayTitleTextFocus = '';
     this.displayTitleTextFocusPlanText = '';
@@ -78,7 +110,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     switch (url) {
       case '/home':
-        this.footerText='selecione uma de nossas soluções abaixo e saiba mais'
+        this.footerText =
+          'selecione uma de nossas soluções abaixo e saiba mais';
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img.svg',
           'Ajude a sua empresa a ter uma',
@@ -88,7 +121,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('menuActive');
         break;
       case '/landing-pages':
-         this.footerText='Para seu site/e-commerce ou sua marca que deseja aparecer no mercado digital que mais cresce atualmente.'
+        this.footerText =
+          'Para seu site/e-commerce ou sua marca que deseja aparecer no mercado digital que mais cresce atualmente.';
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-lp.svg',
           'Converta visitantes em clientes com uma',
@@ -98,7 +132,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('landPagesActive');
         break;
       case '/midias-sociais':
-        this.footerText='Sua empresa está “invisivel” no Instagram?'
+        this.footerText = 'Sua empresa está “invisivel” no Instagram?';
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-social.svg',
           'Maximize suas vendas com',
@@ -108,7 +142,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('socialMEdiaActive');
         break;
       case '/e-commerce':
-        this.footerText='Venha para o digital e perceba os benefícios de uma loja virtual'
+        this.footerText =
+          'Venha para o digital e perceba os benefícios de uma loja virtual';
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-ecomm.svg',
           'Transforme sua visão em uma',
@@ -118,7 +153,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         this.resetActives('ecommerceActive');
         break;
       case '/trafego-pago':
-        this.footerText='Vendas em alta com os anúncios certos!'
+        this.footerText = 'Vendas em alta com os anúncios certos!';
         this.setBackgroundAndStartTyping(
           '../../assets/headers/menu/background-img-campain.svg',
           'Nosso tráfego pago trouxe você até aqui?',
@@ -153,11 +188,14 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   resetActives(active: string): void {
-    this.menuActive = active === 'menuActive' ? 'title-option-active' : '';
-    this.ecommerceActive = active === 'ecommerceActive' ? 'title-option-active' : '';
-    this.campainActive = active === 'campainActive' ? 'title-option-active' : '';
-    this.socialMEdiaActive = active === 'socialMEdiaActive' ? 'title-option-active' : '';
-    this.landPagesActive = active === 'landPagesActive' ? 'title-option-active' : '';
+    this.menuActive = active === 'menuActive' ? 'nav-link-active' : '';
+    this.ecommerceActive =
+      active === 'ecommerceActive' ? 'nav-link-active' : '';
+    this.campainActive = active === 'campainActive' ? 'nav-link-active' : '';
+    this.socialMEdiaActive =
+      active === 'socialMEdiaActive' ? 'nav-link-active' : '';
+    this.landPagesActive =
+      active === 'landPagesActive' ? 'nav-link-active' : '';
   }
 
   setTypingText(focus: string, planText: string): void {
