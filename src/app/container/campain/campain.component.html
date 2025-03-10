@@ -405,14 +405,16 @@
         </div>
       </div>
     </div>
-    <mat-icon
-      aria-hidden="false"
-      class="arrow-down"
-      aria-label="Example home icon"
-      fontIcon="arrow_drop_down"
-    ></mat-icon>
-    <div class="navigation paragraph">
-      <h3 class="font-blue">Com nossa estratégia geográfica, você obtém:</h3>
+    <span (click)="scrollDown()">
+      <mat-icon
+        aria-hidden="false"
+        class="font-white"
+        aria-label="Example home icon"
+        fontIcon="arrow_drop_down"
+      ></mat-icon
+    ></span>
+    <div id="plan-services" class="navigation paragraph medium-gap">
+      <h3 class="font-white">Todos os nossos planos de nível de serviço incluem:</h3>
       <div>
         <nav>
           <ul>
@@ -529,10 +531,11 @@
     <h2>FALE CONOSCO E IMPULSIONE SUA PRESENÇA ONLINE</h2>
     <p>Clique no botão abaixo e fale com um de nossos especialistas.</p>
     <button
-    (click)="openWhatsapp()"
+      (click)="openWhatsapp()"
       class="button-talk-to-us bg-blue font-white"
-      >FALE CONOSCO</button
     >
+      FALE CONOSCO
+    </button>
   </section>
 </div>
 <div class="mobile">
@@ -967,6 +970,11 @@
   >
     <h2>FALE CONOSCO E IMPULSIONE SUA PRESENÇA ONLINE</h2>
     <p>Clique no botão abaixo e fale com um de nossos especialistas.</p>
-    <button (click)="openWhatsapp()" class="button-talk-to-us bg-blue font-white">FALE CONOSCO</button>
+    <button
+      (click)="openWhatsapp()"
+      class="button-talk-to-us bg-blue font-white"
+    >
+      FALE CONOSCO
+    </button>
   </section>
 </div>
