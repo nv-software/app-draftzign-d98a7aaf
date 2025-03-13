@@ -1,12 +1,13 @@
 import { AfterViewInit, Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon'
 import { UtilsService } from '../../service/utils.service';
+import { ArrowDownComponent } from '../../common/arrow-down/arrow-down.component';
 @Component({
   selector: 'app-campain',
   standalone: true,
   templateUrl: './campain.component.html',
   styleUrl: './campain.component.css',
-  imports: [MatIconModule],
+  imports: [MatIconModule, ArrowDownComponent],
 })
 export class CampainComponent implements AfterViewInit {
   ngAfterViewInit(): void {
@@ -18,5 +19,12 @@ export class CampainComponent implements AfterViewInit {
 
   openWhatsapp() {
     this.utilsService.openWhatsapp('')
+  }
+
+  scrollDown() {
+
+    // const someScroll = window.screen.height - (window.screen.height * 0.3)
+
+    document.getElementById('plan-services')?.scrollIntoView({behavior: 'smooth'})
   }
 }

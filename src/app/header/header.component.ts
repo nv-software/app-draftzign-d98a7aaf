@@ -14,6 +14,7 @@ import {
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { UtilsService } from '../service/utils.service';
+import { ArrowDownComponent } from '../common/arrow-down/arrow-down.component';
 
 type StringKeysOfWritable<T> = {
   [K in keyof T]: T[K] extends string ? K : never;
@@ -22,7 +23,7 @@ type StringKeysOfWritable<T> = {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, BrowserModule, MatIconModule],
+  imports: [RouterModule, BrowserModule, MatIconModule, ArrowDownComponent],
   // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
