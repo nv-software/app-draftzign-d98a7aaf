@@ -28,12 +28,12 @@ header {
   color: #ededed;
   cursor: pointer;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .nav-links li:hover {
   color: #0066e0;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-link-active {
@@ -72,6 +72,63 @@ header {
   gap: 8px;
   font-weight: 300;
   font-size: 24px;
+}
+
+.menu:hover {
+  color: #0066e0;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.hidden-sidenav {
+  display: none;
+  top: 0;
+  left: -100%;
+  animation: closeSideNavAnimation 0.5s ease forwards;
+}
+
+.sidenav {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5vw;
+  animation: openSideNavAnimation 0.5s ease forwards;
+}
+
+.sidenav li:hover {
+  font-size: 20px;
+}
+
+.close-sidenav {
+  float: right;
+}
+
+.close-sidenav:hover {
+  cursor: pointer;
+}
+
+@keyframes openSideNavAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes closeSideNavAnimation {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 }
 
 @keyframes blink-caret {

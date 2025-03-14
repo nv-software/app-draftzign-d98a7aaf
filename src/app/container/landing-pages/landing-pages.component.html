@@ -1,27 +1,25 @@
 <div class="desktop">
-  <div class="bg-white" style="position: relative; height: 600px">
-    <div class="background">
-      <div class="top-section"></div>
-      <div class="bottom-section"></div>
-      <div
-        class="section"
-        style="position: absolute; z-index: 1; height: 100%; width: 100%"
-      >
-        <div
-          class="flex-column-start big-gap text-left"
-          style="justify-content: space-between; height: 400px"
-        >
-          <p class="font-blue">
-            Somos especialistas no desenvolvimento de landing pages com
-            direcionamento apontado ao seu mercado e público-alvo.
-          </p>
-          <p class="font-white">
-            Iremos desenvolver a landing page focando em um ou vários produtos
-            de seu catálogo, incentivando o seu cliente à se direcionar ao seu
-            e-commerce ou sua página.
-          </p>
-        </div>
-        <div class="bg-image business-man"></div>
+  <div class="section bg-blue font-white flex-column-center big-gap">
+    <div class="flex-row-center big-gap">
+      <p class="text-center">
+        Somos especialistas no desenvolvimento de landing pages com
+        direcionamento apontado ao seu mercado e público-alvo. Iremos
+        desenvolver a landing page focando em um ou vários produtos de seu
+        catálogo, incentivando o seu cliente à se direcionar ao seu e-commerce
+        ou sua página.
+      </p>
+      <div class="bg-image business-man"></div>
+    </div>
+    <div class="flex-row-center big-gap">
+      <div class="bg-image cellphone-mockup"></div>
+      <div class="flex-column-center text-center big-gap">
+        <h2>Desenvolvimento da Landing Page para máxima performance.</h2>
+        <p>
+          Faremos um estudo e levantamento de mercado antes do desenvolvimento
+          de seu projeto, e com base nos resultados colhidos, prosseguiremos
+          para o desenvolvimento de textos persuasivos e que acolha os clientes
+          que realmente tiverem interesse em seus produtos, serviços, etc.
+        </p>
       </div>
     </div>
   </div>
@@ -30,11 +28,6 @@
       class="section flex-column-center bg-black font-white big-gap"
       style="border-radius: 50px 50px 0 0"
     >
-      <img
-        src="../../../assets/landing-page/computer-image.svg"
-        alt=""
-        style="width: 80%"
-      />
       <h2>
         Vantagens de ter uma
         <span class="focus-span bg-white font-black">landing page</span> em seu
@@ -93,37 +86,46 @@
         <div class="bg-image light-up-business"></div>
         <div class="flex-column-center text-center some-gap">
           <h1>Ilumine seu <span class="font-blue">negócio</span></h1>
-          <div class="button-talk-to-us bg-blue font-white">FALE CONOSCO</div>
+          <button class="button-talk-to-us bg-blue font-white">FALE CONOSCO</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 <div class="mobile">
-  <div class="bg-blue section flex-column-center big-gap font-white" style="position: relative;">
-    <div class="font-white paragraph big-gap text-center" style="z-index: 1;">
-      <p>
+  <div
+    class="section bg-blue font-white flex-column-center big-gap"
+    style="position: relative; overflow-x: hidden"
+  >
+    <div class="flex-column-center big-gap">
+      <p class="text-center" style="z-index: 1">
         Somos especialistas no desenvolvimento de landing pages com
-        direcionamento apontado ao seu mercado e público-alvo.
+        direcionamento apontado ao seu mercado e público-alvo. Iremos
+        desenvolver a landing page focando em um ou vários produtos de seu
+        catálogo, incentivando o seu cliente à se direcionar ao seu e-commerce
+        ou sua página.
       </p>
+      <div
+        class="bg-image business-man"
+        style="position: absolute; left: 50px; top: 50px"
+      ></div>
+    </div>
+    <div class="flex-column-center text-center big-gap" style="padding: 10vh 0 0 0;">
+      <h2>Desenvolvimento da Landing Page para máxima performance.</h2>
+      <div class="bg-image cellphone-mockup"></div>
       <p>
-        Iremos desenvolver a landing page focando em um ou vários produtos de
-        seu catálogo, incentivando o seu cliente à se direcionar ao seu
-        e-commerce ou sua página.
+        Faremos um estudo e levantamento de mercado antes do desenvolvimento de
+        seu projeto, e com base nos resultados colhidos, prosseguiremos para o
+        desenvolvimento de textos persuasivos e que acolha os clientes que
+        realmente tiverem interesse em seus produtos, serviços, etc.
       </p>
     </div>
-    <div class="bg-image business-man" style="position: absolute;left: 0; top: 50;"></div>
   </div>
   <div class="bg-blue">
     <div
       class="section flex-column-center text-center bg-black font-white big-gap"
       style="border-radius: 50px 50px 0 0"
     >
-      <img
-        src="../../../assets/landing-page/computer-image.svg"
-        alt=""
-        style="width: 100%"
-      />
       <h2>
         Vantagens de ter uma
         <span class="font-blue">landing page</span> em seu negócio:
@@ -176,7 +178,7 @@
       </div>
       <div class="flex-column-center text-center some-gap">
         <h1>Ilumine seu <span class="font-blue">negócio</span></h1>
-        <div class="button-talk-to-us bg-blue font-white">FALE CONOSCO</div>
+        <button (click)="openWhatsapp()" class="button-talk-to-us bg-blue font-white">FALE CONOSCO</button>
       </div>
     </div>
     <div class="bg-image light-up-business"></div>
