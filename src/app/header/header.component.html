@@ -1,93 +1,95 @@
 <header [ngStyle]="{ backgroundImage: backgroundImg }">
-  <div class="content section">
-    <div *ngIf="getIsMobile" class="flex-row-center">
-      <div class="bg-image logo"></div>
-      <nav class="nav-links">
-        <ul class="flex-row-center medium-gap">
-          <li class="{{ menuActive }}" routerLink="/home">Home</li>
-          <li class="{{ ecommerceActive }}" routerLink="/e-commerce">
-            E-commerce
-          </li>
-          <li class="{{ campainActive }}" routerLink="/trafego-pago">
-            Tráfego Pago
-          </li>
-          <li class="{{ socialMEdiaActive }}" routerLink="/midias-sociais">
-            Redes Sociais
-          </li>
-          <li class="{{ landPagesActive }}" routerLink="/landing-pages">
-            Landing Pages
-          </li>
-          <span
-            (click)="openWhatsapp()"
-            class="button-talk-to-us-outline-small"
-          >
-            FALE CONOSCO
-          </span>
-        </ul>
-      </nav>
-    </div>
-    <div *ngIf="!getIsMobile" class="flex-row-center">
-      <div>
-        <span (click)="openMenu()" class="menu">
-          <mat-icon
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="menu"
-          ></mat-icon
-        ></span>
-        <div
-          id="sidenav"
-          class="flex-column-start hidden-sidenav bg-black font-white big-gap"
-        >
-          <div style="width: 100%">
-            <span (click)="closeMenu()" class="close-sidenav">
-              <mat-icon
-                aria-hidden="false"
-                aria-label="Example home icon"
-                fontIcon="close"
-              ></mat-icon>
+  <div class="section">
+    <div class="content container">
+      <div *ngIf="getIsMobile" class="flex-row-center">
+        <div class="bg-image logo"></div>
+        <nav class="nav-links">
+          <ul class="flex-row-center medium-gap">
+            <li class="{{ menuActive }}" routerLink="/home">Home</li>
+            <li class="{{ ecommerceActive }}" routerLink="/e-commerce">
+              E-commerce
+            </li>
+            <li class="{{ campainActive }}" routerLink="/trafego-pago">
+              Tráfego Pago
+            </li>
+            <li class="{{ socialMEdiaActive }}" routerLink="/midias-sociais">
+              Redes Sociais
+            </li>
+            <li class="{{ landPagesActive }}" routerLink="/landing-pages">
+              Landing Pages
+            </li>
+            <span
+              (click)="openWhatsapp()"
+              class="button-talk-to-us-outline-small"
+            >
+              FALE CONOSCO
             </span>
-          </div>
-          <nav class="nav-links">
-            <ul class="flex-column-start medium-gap">
-              <li class="{{ menuActive }}" routerLink="/home">Home</li>
-              <li class="{{ ecommerceActive }}" routerLink="/e-commerce">
-                E-commerce
-              </li>
-              <li class="{{ campainActive }}" routerLink="/trafego-pago">
-                Tráfego Pago
-              </li>
-              <li class="{{ socialMEdiaActive }}" routerLink="/midias-sociais">
-                Redes Sociais
-              </li>
-              <li class="{{ landPagesActive }}" routerLink="/landing-pages">
-                Landing Pages
-              </li>
-              <span
-                (click)="openWhatsapp()"
-                class="button-talk-to-us-outline-small"
-              >
-                FALE CONOSCO
-              </span>
-            </ul>
-          </nav>
-        </div>
+          </ul>
+        </nav>
       </div>
-      <div class="bg-image logo"></div>
-    </div>
-    <div class="flex-column-center some-gap text-center title-text">
-      <h2>{{ titleText }}</h2>
-      <h2 class="gradient-text">
-        {{ displayTitleTextFocus }}
-      </h2>
-      <h2 *ngIf="isTyping" class="typewriter-bar"></h2>
-      <h2>
-        {{ displayTitleTextFocusPlanText }}
-      </h2>
-    </div>
-    <div class="paragraph flex-column-center medium-gap text-center">
-      <p>{{ footerText }}</p>
-      <app-arrow-down></app-arrow-down>
+      <div *ngIf="!getIsMobile" class="flex-row-center">
+        <div>
+          <span (click)="openMenu()" class="menu">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="menu"
+            ></mat-icon
+          ></span>
+          <div
+            id="sidenav"
+            class="flex-column-start hidden-sidenav bg-black font-white big-gap"
+          >
+            <div style="width: 100%">
+              <span (click)="closeMenu()" class="close-sidenav">
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="close"
+                ></mat-icon>
+              </span>
+            </div>
+            <nav class="nav-links">
+              <ul class="flex-column-start medium-gap">
+                <li class="{{ menuActive }}" routerLink="/home">Home</li>
+                <li class="{{ ecommerceActive }}" routerLink="/e-commerce">
+                  E-commerce
+                </li>
+                <li class="{{ campainActive }}" routerLink="/trafego-pago">
+                  Tráfego Pago
+                </li>
+                <li class="{{ socialMEdiaActive }}" routerLink="/midias-sociais">
+                  Redes Sociais
+                </li>
+                <li class="{{ landPagesActive }}" routerLink="/landing-pages">
+                  Landing Pages
+                </li>
+                <span
+                  (click)="openWhatsapp()"
+                  class="button-talk-to-us-outline-small"
+                >
+                  FALE CONOSCO
+                </span>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="bg-image logo"></div>
+      </div>
+      <div class="flex-column-center some-gap text-center title-text">
+        <h2>{{ titleText }}</h2>
+        <h2 class="gradient-text">
+          {{ displayTitleTextFocus }}
+        </h2>
+        <h2 *ngIf="isTyping" class="typewriter-bar"></h2>
+        <h2>
+          {{ displayTitleTextFocusPlanText }}
+        </h2>
+      </div>
+      <div class="paragraph flex-column-center medium-gap text-center">
+        <p>{{ footerText }}</p>
+        <app-arrow-down></app-arrow-down>
+      </div>
     </div>
   </div>
 </header>
