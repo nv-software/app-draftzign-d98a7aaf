@@ -1,7 +1,7 @@
 <div class="desktop">
   <div class="section flex-row-center big-gap bg-black font-white">
     <div class="text-container big-gap">
-      <h2 class="flex-column-start" >
+      <h2 class="flex-column-start">
         <span>IMAGINE O</span>
         <span class="focus-span bg-blue font-black">SEGUINTE:</span>
       </h2>
@@ -65,7 +65,7 @@
     <div class="retangle-container medium-gap">
       <div class="retangle-option">
         <div class="flex">
-          <div class="image bg-blue font-white text-center">01</div>
+          <div class="image bg-blue font-white text-center"><h1>01</h1></div>
           <div class="paragraph description font-black">
             <p>
               <strong>Redução de Custos Operacionais:</strong><br />
@@ -84,14 +84,14 @@
             </p>
           </div>
           <div class="image bg-blue font-white text-center">
-            <span>02</span>
+            <span><h1>02</h1></span>
           </div>
         </div>
       </div>
       <div class="retangle-option">
         <div class="flex">
           <div class="image bg-blue font-white text-center">
-            <span>03</span>
+            <span><h1>03</h1></span>
           </div>
           <div class="paragraph description font-black">
             <p>
@@ -112,7 +112,7 @@
             </p>
           </div>
           <div class="image bg-blue font-white text-center">
-            <span>04</span>
+            <span><h1>04</h1></span>
           </div>
         </div>
       </div>
@@ -183,7 +183,8 @@
         </div>
         <div class="paragraph flex-column-center medium-gap">
           <p><strong>Vagas limitadas, garanta a sua agora!</strong></p>
-          <div class="arrow-down"></div>
+          <mat-icon aria-hidden="false" class="arrow-down" aria-label="Example home icon" fontIcon="arrow_drop_down"></mat-icon>
+
         </div>
       </div>
     </div>
@@ -199,7 +200,7 @@
         </strong>
       </h3>
       <div>
-        <div class="button-talk-to-us bg-blue font-white">FALE CONOSCO</div>
+        <button (click)="openWhatsapp()" class="button-talk-to-us bg-blue font-white">FALE CONOSCO</button>
       </div>
     </div>
   </div>
@@ -221,7 +222,7 @@
   </div>
   <div class="section flex-column-center big-gap bg-blue font-white">
     <div class="bg-image veder-machine">
-      <h2 class="flex-column-start" style="float: right;">
+      <h2 class="flex-column-start" style="float: right">
         <span>O poder do</span>
         <span class="focus-span bg-white font-blue">E-commerce</span>
       </h2>
@@ -259,8 +260,8 @@
     <div class="retangle-container medium-gap">
       <div class="retangle-option">
         <div class="flex">
-          <div class="flex-row-center big-gap">
-            <div class="image bg-blue font-white text-center">01</div>
+          <div class="flex-row-center some-gap">
+            <div class="image bg-blue font-white text-center"><h1>01</h1></div>
             <h3>Redução de Custos Operacionais:</h3>
           </div>
           <div class="paragraph description font-black text-left">
@@ -273,9 +274,9 @@
       </div>
       <div class="retangle-option">
         <div class="flex">
-          <div class="flex-row-center big-gap">
+          <div class="flex-row-center some-gap">
             <h3>Automatização de Vendas:</h3>
-            <div class="image bg-blue font-white text-center">02</div>
+            <div class="image bg-blue font-white text-center"><h1>02</h1></div>
           </div>
           <div class="paragraph description font-black text-left">
             <p>
@@ -287,8 +288,8 @@
       </div>
       <div class="retangle-option">
         <div class="flex">
-          <div class="flex-row-center big-gap">
-            <div class="image bg-blue font-white text-center">03</div>
+          <div class="flex-row-center some-gap">
+            <div class="image bg-blue font-white text-center"><h1>03</h1></div>
             <h3>Dados Valiosos de Clientes:</h3>
           </div>
           <div class="paragraph description font-black text-left">
@@ -301,9 +302,9 @@
       </div>
       <div class="retangle-option">
         <div class="flex">
-          <div class="flex-row-center big-gap">
+          <div class="flex-row-center some-gap">
             <h3>Conveniência para o Cliente:</h3>
-            <div class="image bg-blue font-white text-center">04</div>
+            <div class="image bg-blue font-white text-center"><h1>04</h1></div>
           </div>
           <div class="paragraph description font-black text-left">
             <p>
@@ -391,7 +392,7 @@
         </div>
         <div class="paragraph flex-column-center medium-gap">
           <p><strong>Vagas limitadas, garanta a sua agora!</strong></p>
-          <div class="arrow-down"></div>
+          <mat-icon aria-hidden="false" class="arrow-down" aria-label="Example home icon" fontIcon="arrow_drop_down"></mat-icon>
         </div>
       </div>
     </div>
@@ -409,7 +410,7 @@
         </p>
       </div>
       <div>
-        <div class="button-talk-to-us bg-blue font-white">FALE CONOSCO</div>
+        <button (click)="openWhatsapp()" class="button-talk-to-us bg-blue font-white">FALE CONOSCO</button>
       </div>
     </div>
   </div>
