@@ -66,6 +66,12 @@ p {
   padding: 10vh 5vw;
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 1441px;
 }
 
 .flex-column-center {
