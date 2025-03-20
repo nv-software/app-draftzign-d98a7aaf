@@ -12,6 +12,9 @@ import { LandingPagesComponent } from './container/landing-pages/landing-pages.c
 import { SocialMediaComponent } from './container/social-media/social-media.component';
 import { HomeComponent } from './container/home/home.component';
 import { CampainComponent } from './container/campain/campain.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 export const routes: Routes = [
 
@@ -33,7 +36,8 @@ export const routes: Routes = [
     BrowserModule,
     FooterComponent,
     HeaderComponent,
-    ContainerComponent],
+    ContainerComponent,
+    NgbModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -129,6 +129,22 @@
         </p>
       </div>
       <div class="plans medium-gap">
+        @if (images) {
+          <ngb-carousel [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+            @for (image of images; track image) {
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img [src]="image" alt="Random slide" />
+                </div>
+                <div class="carousel-caption">
+                  <h3>No mouse navigation</h3>
+                  <p>This carousel hides navigation arrows and indicators.</p>
+                </div>
+              </ng-template>
+            }
+          </ngb-carousel>
+        }
+        
         <div class="plan medium-gap bg-white font-black">
           <h4 class="font-blue">Plano Initial</h4>
 
