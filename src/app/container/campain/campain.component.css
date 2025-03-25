@@ -52,14 +52,13 @@
 }
 
 .plan {
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .plan .benefits,
@@ -165,17 +164,39 @@
 }
 
 @keyframes slider {
-  0%{transform: translateX(0%);}
-  10%{transform: translateX(0%);}
-  20%{transform: translateX(-100%);}
-  30%{transform: translateX(-100%);}
-  40%{transform: translateX(-100%);}
-  50%{transform: translateX(-200%);}
-  60%{transform: translateX(-200%);}
-  70%{transform: translateX(-200%);}
-  80%{transform: translateX(-200%);}
-  90%{transform: translateX(0%);}
-  100%{transform: translateX(0%);}
+  0% {
+    transform: translateX(0%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateX(-100%);
+  }
+  40% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  60% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: translateX(-200%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @media (max-width: 1090px) {
@@ -203,4 +224,22 @@
     height: 300px;
     background-position: center;
   }
+
+  .plan {
+    margin: 5px;
+  }
+
+  .plan-value {
+    font-weight: 800;
+    font-size: 20px;
+  }
+}
+
+p-carousel {
+  max-width: 90vw;
+  height: 100%;
+}
+
+::ng-deep .p-carousel {
+  --p-carousel-content-gap: 10px;
 }
