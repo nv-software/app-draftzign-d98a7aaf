@@ -675,7 +675,127 @@
       de tráfego
     </h2>
 
-    <div class="slider-wrapper">
+    <p-carousel
+      [value]="plans"
+      [numVisible]="1"
+      [numScroll]="1"
+      [circular]="true"
+      [showIndicators]="true"
+    >
+      <ng-template let-plan #item>
+        <div class="plan medium-gap bg-white font-black">
+          <h4 class="font-blue">{{ plan.title }}</h4>
+          <div class="plan-border"></div>
+          <div class="benefits medium-gap font-black">
+            <h5 class="font-blue text-center">benefícios</h5>
+            <div
+              *ngFor="let benefit of plan.benefits"
+              class="benefits-list some-gap"
+            >
+              <div class="flex-row-start some-gap" [ngStyle]="{'color': benefit.disabled ? '#9f9f9f' : ''}">
+                @if(!benefit.disabled) {
+                <span class="font-blue">
+                  <mat-icon
+                    aria-hidden="false"
+                    aria-label="Example home icon"
+                    fontIcon="check"
+                  ></mat-icon>
+                </span>
+                } @else {
+                <span>
+                  <mat-icon
+                    aria-hidden="false"
+                    aria-label="Example home icon"
+                    fontIcon="close"
+                  ></mat-icon>
+                </span>
+                }
+                <span>{{ benefit.description }}</span>
+              </div>
+              <!-- <div class="flex-row-start some-gap">
+                  <span class="font-blue">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Example home icon"
+                      fontIcon="check"
+                    ></mat-icon> </span
+                  ><span
+                    ><span style="font-weight: 500">Reuniões quinzenais</span> p/
+                    acompanhamento e apresentação de resultados;</span
+                  >
+                </div>
+                <div class="flex-row-start some-gap">
+                  <span class="font-blue">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Example home icon"
+                      fontIcon="check"
+                    ></mat-icon> </span
+                  >Otimizações de campanha por nossos especialistas Google Ads;
+                </div>
+                <div class="flex-row-start some-gap">
+                  <span class="font-blue">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Example home icon"
+                      fontIcon="check"
+                    ></mat-icon> </span
+                  ><span
+                    >Desenvolvimento Landing Pages de alta conversão p/
+                    <span style="font-weight: 500">diversos</span> produtos ou
+                    serviços;</span
+                  >
+                </div>
+                <div class="flex-row-start some-gap">
+                  <span class="font-blue">
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Example home icon"
+                      fontIcon="check"
+                    ></mat-icon> </span
+                  ><span style="font-weight: 500"
+                    >Gerente de conta dedicado à suas estratégias e
+                    resultados;</span
+                  >
+                </div> -->
+            </div>
+          </div>
+          <div class="plan-border"></div>
+          <div class="ad-budget some-gap">
+            <h5 class="font-blue text-center">verba de anúncio indicada</h5>
+            <div class="plan-value-content some-gap">
+              <div class="plan-value-flex">
+                <span class="plan-value font-blue">{{ plan.minAdValue }}</span>
+                <span>/mês</span>
+              </div>
+              <div>até</div>
+              <div class="plan-value-flex">
+                <span class="plan-value font-blue">{{ plan.maxAdValue }}</span>
+                <span>/mês</span>
+              </div>
+            </div>
+          </div>
+          <div class="plan-border"></div>
+          <div class="service-value some-gap">
+            <h5 class="font-blue text-center">valor do serviço</h5>
+            <div class="plan-value-flex">
+              <div>
+                <span class="plan-value font-blue">{{
+                  plan.serviceValue
+                }}</span>
+                /mês
+              </div>
+              <div>+ 10% de verba do anúncio</div>
+            </div>
+          </div>
+          <div class="plan-footer font-blue text-center">
+            {{ plan.description }}
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+
+    <!-- <div class="slider-wrapper">
       <div class="slider">
         <div
           id="firstPlan"
@@ -982,7 +1102,7 @@
       <a class="bg-white" routerLink="/trafego-pago#firstPlan"></a>
       <a class="bg-white" routerLink="/trafego-pago#secondPlan"></a>
       <a class="bg-white" routerLink="/trafego-pago#thirdPlan"></a>
-    </div>
+    </div> -->
   </section>
   <section
     class="section flex-column-center big-gap bg-white font-black text-center"

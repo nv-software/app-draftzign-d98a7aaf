@@ -19,7 +19,26 @@
           </p>
         </div>
       </div>
-      <div class="bg-image iphone-group"></div>
+      <!-- <p-carousel
+        [value]="images"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="true"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-image #item>
+          <div
+            style="display: flex; justify-content: center; align-items: center; width: 100%;"
+          >
+            <div
+              class="bg-image"
+              [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+              style="background-position: center;"
+            ></div>
+          </div>
+        </ng-template>
+      </p-carousel> -->
+      <!-- <div class="bg-image iphone-group"></div> -->
 
       <h3>
         <strong
@@ -151,12 +170,20 @@
         </strong>
       </p>
     </div>
-    <div class="slider-wrapper">
-      <div class="slider">
-        <div class="bg-image first-iphone"></div>
-        <div class="bg-image second-iphone"></div>
-      </div>
-    </div>
+
+    <p-carousel
+      [value]="images"
+      [numVisible]="1"
+      [numScroll]="1"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+      autoplayInterval="5000"
+    >
+      <ng-template let-image #item>
+        <img [src]="image.src" [alt]="image.title" />
+      </ng-template>
+    </p-carousel>
+
     <div class="flex-row-center big-gap">
       <div class="paragraph">
         <p class="text-center">
