@@ -1,21 +1,206 @@
-<footer>
-  <div class="section {{ backgroundClass }}">
-    <div class="container flex-column-center">
-      <a
-        class="bg-image footer-ico"
-        target="_blank"
-        href="https://www.instagram.com/draft.zign/"
-      >
-      </a>
-      <h4 class="text-center font-white">
-        Siga para dicas e novidades de desenvolvimento.
-      </h4>
+<footer class="footer flex-column-center font-white">
+  <div class="section">
+    <div class="container flex-column-center big-gap" style="width: 100%">
+      <div class="flex-column-center some-gap">
+        <div class="bg-image logo" style="min-height: 50px"></div>
+        <h6><strong>UMA EMPRESA DO GRUPO NEW VISION</strong></h6>
+      </div>
+      <div class="desktop">
+        <div
+          class="flex-row-start"
+          style="justify-content: space-between; width: 100%"
+        >
+          <div class="flex-column-start some-gap">
+            <div style="cursor: pointer">
+              <a
+                class="font-white"
+                target="_blank"
+                href="https://www.instagram.com/draft.zign/"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-instagram-icon lucide-instagram"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+            </div>
+
+            <div style="cursor: pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-facebook-icon lucide-facebook"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </div>
+
+            <div style="cursor: pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-linkedin-icon lucide-linkedin"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </div>
+          </div>
+          <div class="flex-column-start some-gap">
+            <h6>Empresa:</h6>
+            <p class="flex-column-start" style="color: #5e5e5e">
+              <span>NEW VISION ENERGIA E TECNOLOGIA LTDA</span>
+              <span>CNPJ: 13.451.300/0001-39</span>
+              <span>ATIBAIA - SP</span>
+            </p>
+          </div>
+          <div class="flex-column-start some-gap">
+            <h6>Dúvidas:</h6>
+            <p class="flex-column-start" style="color: #5e5e5e">
+              <span
+                >Em caso de dúvidas,
+                <span
+                  class="font-blue"
+                  (click)="openWhatsapp()"
+                  style="cursor: pointer"
+                  >clique aqui</span
+                >
+                e entre em contato conosco.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mobile">
+        <div
+          class="flex-column-center big-gap"
+          style="justify-content: space-between; width: 100%"
+        >
+          <div class="flex-row-center some-gap">
+            <div style="cursor: pointer">
+              <a
+                class="font-white"
+                target="_blank"
+                href="https://www.instagram.com/draft.zign/"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-instagram-icon lucide-instagram"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+            </div>
+
+            <div style="cursor: pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-facebook-icon lucide-facebook"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </div>
+
+            <div style="cursor: pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-linkedin-icon lucide-linkedin"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </div>
+          </div>
+          <div class="flex-column-center some-gap">
+            <h6>Empresa:</h6>
+            <p class="flex-column-center text-center" style="color: #5e5e5e">
+              <span>NEW VISION ENERGIA E TECNOLOGIA LTDA</span>
+              <span>CNPJ: 13.451.300/0001-39</span>
+              <span>ATIBAIA - SP</span>
+            </p>
+          </div>
+          <div class="flex-column-center some-gap">
+            <h6>Dúvidas:</h6>
+            <p class="flex-column-center text-center" style="color: #5e5e5e">
+              <span
+                >Em caso de dúvidas,
+                <span
+                  class="font-blue"
+                  (click)="openWhatsapp()"
+                  style="cursor: pointer"
+                  >clique aqui</span
+                >
+                e entre em contato conosco.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="footer">
-    <p>
-      <span class="font-blue">©</span>
-      <span class="font-white"> 2024 | Draftzign</span>
-    </p>
-  </div>
+  <p style="padding: 1vh 5vw">
+    <span>©</span>
+    <span> 2024 | Draftzign</span>
+  </p>
 </footer>
