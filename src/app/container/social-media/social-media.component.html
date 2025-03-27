@@ -176,11 +176,11 @@
       [numVisible]="1"
       [numScroll]="1"
       [circular]="true"
-      [responsiveOptions]="responsiveOptions"
-      autoplayInterval="5000"
     >
       <ng-template let-image #item>
-        <img [src]="image.src" [alt]="image.title" />
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img [src]="image.src" [alt]="image.title" style="width: 80%;"/>
+        </div>
       </ng-template>
     </p-carousel>
 
