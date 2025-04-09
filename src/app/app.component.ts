@@ -19,9 +19,23 @@ export class AppComponent implements OnInit {
     '../../assets/headers/menu/background-img-ecomm.svg',
     '../../assets/headers/menu/background-img-campain.svg',
   ];
+  isMobile: boolean = false;
 
   ngOnInit(): void {
+    this.checkScreenSize();
+    window.addEventListener('resize', () => {
+      this.checkScreenSize();
+    });
+    
     this.preloadImages();
+  }
+
+  get getIsMobile() {
+    return this.isMobile;
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth > 1091;
   }
 
   preloadImages(): void {
